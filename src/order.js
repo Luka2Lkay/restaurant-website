@@ -10,7 +10,7 @@ const createElement = (element) => {
     return createElement.setAttribute(property, value);
   };
 
-
+//Create the order page
   const createOrder = () =>{
       const order = createElement('div');
       addClass(order, 'food_order');
@@ -44,6 +44,7 @@ const createElement = (element) => {
       return order;
   }
 
+  //the order page is the main content
   const loadOrder = () =>{
       const main = document.querySelector('.main_content');
       main.textContent = '';

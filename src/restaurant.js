@@ -7,16 +7,15 @@ const createElement = (element) => {
     return document.createElement(element);
   };
 
-  const addClass = (createElement, myclass) => {
+const addClass = (createElement, myclass) => {
     return createElement.classList.add(myclass);
   };
 
-  const links = (list, url) => {
+const links = (list, url) => {
     return list.appendChild(url);
   };
 
-
-
+// Active navigation link
 const activeNavLink = (link) => {
   const navLinks = document.querySelectorAll('.nav_links');
 
@@ -31,6 +30,7 @@ const createSecondHeader = () =>{
     const secondHeader = createElement("div");
     addClass(secondHeader, "second-header");
 
+    //Create the navigation
     const navigation = createElement("nav");
     const unOrderedList = createElement("ul");
 
@@ -48,8 +48,6 @@ const createSecondHeader = () =>{
       }
     });
 
-
-
     const menu = createElement("li");
     const menuLink = createElement("a");
     addClass(menuLink, 'nav_links');
@@ -64,7 +62,6 @@ const createSecondHeader = () =>{
       }
     });
 
-
     const order = createElement("li");
     const orderLink = createElement("a");
     addClass(orderLink, 'nav_links');
@@ -77,7 +74,6 @@ const createSecondHeader = () =>{
         loadOrder();
       }
     });
-
 
     links(home, homeLink);
     links(menu, menuLink);
@@ -92,6 +88,7 @@ const createSecondHeader = () =>{
     return secondHeader;
 }
 
+//Create the headers
 
 const createHeader = () => {
   const header = createElement("header");
@@ -110,13 +107,13 @@ const createHeader = () => {
   return header;
 }
 
+//Create the main content
 const createMain = () => {
   const main = createElement('div');
   addClass(main, 'main_content')
 
   return main;
 }
-
 
 const loadRestaurant = () => {
     const content = document.getElementById("content");
@@ -126,7 +123,6 @@ const loadRestaurant = () => {
 
     activeNavLink(document.querySelector('.nav_links'));
     loadHome();
-
 }
 
 export default loadRestaurant;

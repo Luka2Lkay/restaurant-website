@@ -10,9 +10,8 @@ const createElement = (element) => {
     return createElement.setAttribute(property, value);
   };
 
-
-
-const createFood = (name, price) =>{
+  // Meals and their prices
+  const createFood = (name, price) =>{
   const food = createElement('div');
   addClass(food, 'food_div');
 
@@ -24,7 +23,6 @@ const createFood = (name, price) =>{
   attributes(foodImage, 'width', '350');
   attributes(foodImage, 'height', '300');
   
-
   const foodFigCaption = createElement('figcaption');
   addClass(foodFigCaption, 'food_figcaption');
   foodFigCaption.textContent = `${name} ${price}`;
@@ -40,7 +38,7 @@ const createFood = (name, price) =>{
   food.appendChild(figImage);
   return food;
 }
-
+//Append the createFood function to the menuPage
 const createMenu = () => {
     const menuPage = createElement('div');
     addClass(menuPage, 'menu_page');
@@ -51,9 +49,9 @@ const createMenu = () => {
     menuPage.appendChild(createFood('Umleqwa', 'R 100.00'));
 
     return menuPage;
-
 }
 
+// createMenu is the new main content
 const loadMenu = () =>{
   const main = document.querySelector('.main_content');
   main.textContent = '';
